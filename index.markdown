@@ -6,16 +6,19 @@ layout: default
 title: Home
 ---
 
-# Portfolio
-
-## About me
-
-I am a PhD student in the [Department of Computer Science](https://www.cs.ubc.ca/) at the [University of British Columbia](https://www.ubc.ca/). I am a member of the [Database Research Group](https://dbgroup.cs.ubc.ca/) and I am supervised by [Prof. Margo Seltzer](https://www.seas.harvard.edu/directory/margo-seltzer). My research interests are in the area of database systems, with a focus on data management for machine learning. I am also interested in data visualization and data science. I received my BSc in Computer Science from the [University of Toronto](https://www.utoronto.ca/).
-
-## Gallery
-
 {% gallery
-    /path/to/image1.jpg#A caption,
-    /path/to/image2.jpg#Another caption,
-    /path/to/image3.jpg
+@height: 110vw,
+@width: auto,
+@image-width: 32vw,
+
+    ../images/img0.jpg | A caption | https://www.google.com,
+    ../images/img1.jpg | A caption | https://www.google.com,
+    ../images/img2.jpg | A caption | https://www.google.com,
+    ../images/img3.jpg | A caption | https://www.google.com,
+    ../images/img4.jpg | A caption | https://www.google.com,
+    ../images/img5.jpg | A caption | https://www.google.com,
+    ../images/img6.jpg | A caption | https://www.google.com,
+    ../images/img7.jpg | A caption | https://www.google.com,
+    ../images/img8.jpg | A caption
+
 %}
