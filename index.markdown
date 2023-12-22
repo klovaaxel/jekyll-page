@@ -7,8 +7,6 @@ title: Home
 ---
 
 {% gallery
-@width: auto,
-@columns: 3,
 
     ./images/img0.webp | A caption | https://www.google.com,
     ./images/img1.webp | A caption | https://www.google.com,
