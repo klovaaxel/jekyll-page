@@ -17,7 +17,6 @@ title: Home
     ./images/img4.jpg | A caption | https://www.google.com,
     ./images/img5.jpg | A caption | https://www.google.com,
     ./images/img6.jpg | A caption | https://www.google.com,
-    ./images/img7.jpg | A caption | https://www.google.com,
-    ./images/img8.jpg | A caption
+    ./images/img7.jpg | A caption
 
 %}
