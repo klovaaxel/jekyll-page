@@ -1,5 +1,5 @@
 PATH
-  remote: portfolio_theme
+  remote: ../portfolio_theme
   specs:
     portfolio_theme (0.1.0)
       jekyll (~> 4.3)
