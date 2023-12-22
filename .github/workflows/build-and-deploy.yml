@@ -1,0 +1,37 @@
+name: Jekyll build and deploy
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    github-pages:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Set up Ruby
+              uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: 3.0.2
+
+            - name: Install dependencies
+              run: |
+                  gem install bundler
+                  bundle install
+
+            - name: Build
+              run: bundle exec jekyll build
+
+            - name: Deploy
+              run: |
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --global user.name "github-actions[bot]"
+                  git checkout --orphan gh-pages
+                  git rm -rf .
+                  cp -r _site/* .
+                  git add .
+                  git commit -m "Update GitHub Pages"
+                  git push origin gh-pages --force
