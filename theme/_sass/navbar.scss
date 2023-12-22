@@ -3,7 +3,8 @@ nav.main {
     display: flex;
     gap: 2rem;
     align-items: center;
-    padding: 1rem;
+    padding-inline: 1rem;
+    margin-block: 1rem;
     text-transform: uppercase;
 
     a:first-child {
