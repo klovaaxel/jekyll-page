@@ -7,9 +7,8 @@ title: Home
 ---
 
 {% gallery
-@height: 110vw,
 @width: auto,
-@image-width: 32vw,
+@columns: 3,
 
     ../images/img0.jpg | A caption | https://www.google.com,
     ../images/img1.jpg | A caption | https://www.google.com,

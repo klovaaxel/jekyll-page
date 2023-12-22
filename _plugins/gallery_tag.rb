@@ -4,7 +4,7 @@ module Jekyll
             super
             @width = nil
             @height = nil
-            @imageWidth= nil
+            @columnCount= nil
             @images = []
             properties = text.split(',').map(&:strip)
             properties.each do |property|
@@ -13,10 +13,8 @@ module Jekyll
                     case key
                     when '@width'
                         @width = value
-                    when '@height'
-                        @height = value
-                    when '@image-width'
-                        @imageWidth = value
+                    when '@columns'
+                        @columnCount = value
                     end
                 else
                     image_path, alt_text, url, linkText = property.split(' | ').map(&:strip)
@@ -30,13 +28,13 @@ module Jekyll
         def render(context)
             style = ''
             style += "width: #{@width};" if @width
-            style += "height: #{@height};" if @height
+            style += "columns: #{@columnCount};" if @columnCount
             output = "<div class=\"gallery\" style=\"#{style}\">"
             @images.each do |image|
                 if image[:url].empty?
-                    output += "<img style=\"width:#{@imageWidth} \" src=\"#{image[:path]}\" alt=\"#{image[:alt]}\">"
+                    output += "<img src=\"#{image[:path]}\" alt=\"#{image[:alt]}\">"
                 else
-                    output += "<a href=\"#{image[:url]}\"><img style=\"width:#{@imageWidth} \" src=\"#{image[:path]}\" alt=\"#{image[:alt]}\"></a>"
+                    output += "<a href=\"#{image[:url]}\"><img src=\"#{image[:path]}\" alt=\"#{image[:alt]}\"></a>"
                 end
             end
             output += '</div>'
