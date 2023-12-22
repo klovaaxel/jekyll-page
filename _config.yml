@@ -30,7 +30,7 @@ twitter_username: jekyllrb
 github_username: jekyll
 
 # Build settings
-theme: portfolio_theme
+remote_theme: klovaaxel/portfolio_theme
 plugins:
     - jekyll-feed
 # Exclude from processing.
