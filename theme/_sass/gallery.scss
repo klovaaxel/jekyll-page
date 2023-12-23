@@ -4,6 +4,10 @@
     margin: 1rem;
     width: auto;
 
+    &.gallery-loading {
+        filter: opacity(0);
+    }
+
     & > a {
         display: inline-block;
         width: 100%;
