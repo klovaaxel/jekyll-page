@@ -1,0 +1,70 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="./assets/main.css" />
+
+        <title></title>
+    </head>
+    <body>
+        <nav id="navbar" class="main">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<script>
+    const navbar = document.getElementById("navbar");
+    const links = navbar.getElementsByTagName("a");
+    const currentUrl = window.location.href;
+
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].href === currentUrl) {
+            links[i].className = "active";
+        }
+    }
+</script>
+
+        <main><div class="gallery" style=""><a href="https://www.google.com"><img src="./images/img0.webp" alt="A caption" /></a><a href="https://www.google.com"><img src="./images/img1.webp" alt="A caption" /></a><a href="https://www.google.com"><img src="./images/img2.webp" alt="A caption" /></a><a href="https://www.google.com"><img src="./images/img3.webp" alt="A caption" /></a><a href="https://www.google.com"><img src="./images/img4.webp" alt="A caption" /></a><a href="https://www.google.com"><img src="./images/img5.webp" alt="A caption" /></a><a href="https://www.google.com"><img src="./images/img6.webp" alt="A caption" /></a><img src="./images/img7.webp" alt="A caption" /><img src="./images/img8.webp" alt="A caption" /></div>
+</main>
+        <footer class="main">
+    <p>A website</p>
+</footer>
+
+    </body>
+
+    <script src="./assets/gallery-sorter.js"></script>
+    <script>
+        // Get the gallery and images
+        const galleries = [];
+        const gallerieElemnts = Array.from(
+            document.querySelectorAll(".gallery")
+        );
+
+        // Loop through the galleries and add them to the array
+        for (i = 0; i < gallerieElemnts.length; i++)
+            galleries.push({
+                container: gallerieElemnts[i],
+                images: Array.from(gallerieElemnts[i].children),
+            });
+
+        // Hide the gallery while we sort it
+        for (gallery of galleries)
+            gallery.container.classList.add("gallery-loading");
+
+        // When the window is resized, sort the gallery
+        window.addEventListener("resize", function (event) {
+            for (gallery of galleries) {
+                gallery.container.classList.add("gallery-loading");
+                sortGallery(gallery.container, gallery.images);
+            }
+        });
+
+        // When we load the page, sort the gallery
+        window.addEventListener("load", function (event) {
+            for (gallery of galleries)
+                sortGallery(gallery.container, gallery.images);
+        });
+    </script>
+</html>
