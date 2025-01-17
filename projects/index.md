@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Galleri/Projekt
-description: Här finns bilder och länkar till olika projekt och gallerier av lisaplommon
+description: Här finns bilder och länkar till olika projekt och gallerier av Lisa Plommon
 ---
 
 # Galleri/Projekt

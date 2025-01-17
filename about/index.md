@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Om
-description: Om Lisaplommon
+description: Om Lisa Plommon
 ---
 
-# Om Lisaplommon
+# Om Lisa Plommon
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Dui purus sed integer consectetur condimentum montes euismod. Laoreet orci mauris mattis montes vestibulum himenaeos ultricies pellentesque lobortis. Sagittis magna hac litora, ligula lorem consectetur. Diam efficitur suscipit aptent dis mattis. Gravida velit ante metus eu dui. Duis hendrerit consequat etiam curabitur tellus sapien sed habitasse.
 

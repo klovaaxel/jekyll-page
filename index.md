@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Lisaplommon
+title: Lisa Plommon
 pageName: index
-description: Samlingssida för lisaplommons projekt, bilder och konst
+description: Samlingssida för Lisa Plommons projekt, bilder och konst
 ---
 {% gallery
 
