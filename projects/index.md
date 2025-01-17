@@ -11,7 +11,7 @@ Ett exempel på länk:
 
 [Plastfisk](/plastfisk)
 
-Ett exempel på bilder (de kanske inte borde länska till google dock):
+Ett exempel på bilder (de kanske inte borde länka till google dock):
 
 {% gallery
 
