@@ -13,15 +13,17 @@ module Jekyll
         end
 
         def render(context)
+            site = context.registers[:site]
             style = ''
             style += "width: #{@width};" if @width
             style += "columns: #{@columnCount};" if @columnCount
             output = "<div class=\"gallery\" style=\"#{style}\">"
             @images.each do |image|
                 if image[:url].empty?
-                    output += "<img src=\"#{image[:path]}\" alt=\"#{image[:alt]}\">"
+                    output += "<img src=\"#{ site.baseurl }#{image[:path]}\" alt=\"#{image[:alt]}\">"
                 else
-                    output += "<a href=\"#{image[:url]}\"><img src=\"#{image[:path]}\" alt=\"#{image[:alt]}\"></a>"
+                    # Todo: Switch betwen local links and external links and add baseurl if local
+                    output += "<a href=\"#{image[:url]}\"><img src=\"#{ site.baseurl }#{image[:path]}\" alt=\"#{image[:alt]}\"></a>"
                 end
             end
             output += '</div>'
