@@ -10,7 +10,7 @@ Har skall det in bilder och länkar
 
 Ett exempel på länk:
 
-[Plastfisk](/plastfisk)
+[Plastfisk]({{ site.baseurl }}/plastfisk)
 
 Ett exempel på bilder (de kanske inte borde länka till google dock):
 
