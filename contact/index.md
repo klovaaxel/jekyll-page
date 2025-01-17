@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Kontakt
+description: Här finns lisaplommons kontaktuppgifter
 ---
 
 # Kontakt

@@ -2,6 +2,7 @@
 layout: default
 title: Lisaplommon
 pageName: index
+description: Samlingssida för lisaplommons projekt, bilder och konst
 ---
 {% gallery
 

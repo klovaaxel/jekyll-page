@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Om
+description: Om Lisaplommon
 ---
 
 # Om Lisaplommon
