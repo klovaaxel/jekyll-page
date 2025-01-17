@@ -1,3 +1,34 @@
+// Get the gallery and images
+const galleries = [];
+const gallerieElemnts = Array.from(
+    document.querySelectorAll(".gallery")
+);
+
+// Loop through the galleries and add them to the array
+for (i = 0; i < gallerieElemnts.length; i++)
+    galleries.push({
+        container: gallerieElemnts[i],
+        images: Array.from(gallerieElemnts[i].children),
+    });
+
+// Hide the gallery while we sort it
+for (gallery of galleries)
+    gallery.container.classList.add("gallery-loading");
+
+// When the window is resized, sort the gallery
+window.addEventListener("resize", function (event) {
+    for (gallery of galleries) {
+        gallery.container.classList.add("gallery-loading");
+        sortGallery(gallery.container, gallery.images);
+    }
+});
+
+// When we load the page, sort the gallery
+window.addEventListener("load", function (event) {
+    for (gallery of galleries)
+        sortGallery(gallery.container, gallery.images);
+});
+
 function stretchImages(columnCount, columnHeights, column3dArray) {
     // If we only have one column, we don't need to stretch the images
     if (columnCount == 1) return;

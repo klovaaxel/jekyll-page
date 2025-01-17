@@ -1,11 +1,17 @@
 ---
 ---
 
-@import "../_sass/gallery.scss";
-@import "../_sass/navbar.scss";
-@import "../_sass/footer.scss";
+@use "../_sass/gallery.scss";
+@use "../_sass/navbar.scss";
+@use "../_sass/footer.scss";
+
+:root {
+    --background-color: white;
+    --load-transition: 200ms ease-in-out;
+}
 
 body {
+    background: var(--background-color);
     max-width: 100dvw;
     min-height: 100svh;
     padding: 0;
@@ -13,4 +19,26 @@ body {
 
     font-size: 1.5rem;
     font-family: "Roboto", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    opacity: 1;
+    transition: var(--load-transition);
+
+    &.loading,
+    &.unloading {
+        opacity: 0;
+    }
+
+    @starting-style {
+        opacity: 0;
+    }
+}
+
+body:not(.index) main {
+    margin: auto;
+    max-width: min(75ch, 90vw);
 }

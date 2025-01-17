@@ -1,11 +1,16 @@
 nav.main {
+    --padding: 1rem;
+    background: var(--background-color);
+    
     font-size: 1.2rem;
     display: flex;
     gap: 2rem;
     align-items: center;
-    padding-inline: 1rem;
-    margin-block: 1rem;
-    text-transform: uppercase;
+    padding: var(--padding) 5rem var(--padding) var(--padding);
+    text-transform: capitalize;
+
+    position: sticky;
+    top: 0;
 
     a:first-child {
         margin-right: auto;
