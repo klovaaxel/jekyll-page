@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="">
+
+        <title>404</title>
+
+        <link rel="stylesheet" href="/jekyll-page/assets/main.css" />
+        <script defer src="/jekyll-page/assets/gallery-sorter.js"></script>
+    </head>
+    <body class="">
+        
+
+<nav id="navbar" class="main" >
+    <a href="/jekyll-page/">Lisa Plommon</a>
+
+    <button id="navbar-menubutton" class="navbar-menubutton" type="button" aria-haspopup="true" aria-controls="navbar" aria-expanded="false">
+        Meny
+    </button>
+    <ul role="menu" aria-labelledby="navbar-menubutton">
+        <li role="none">
+            <a role="menuitem" href="/jekyll-page/projects">Galleri/projekt</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" href="/jekyll-page/about">Om</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" href="/jekyll-page/contact">Kontakt</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    const navbar = document.getElementById("navbar");
+    const links = navbar.querySelectorAll("ul a");
+    const currentUrl = window.location.pathname;
+
+    // Set active class on current page
+    for (let i = 0; i < links.length; i++) {
+        if (currentUrl.includes(links[i].getAttribute("href"))) {
+            links[i].setAttribute("aria-current", "page");
+        } else {
+            links[i].removeAttribute("aria-current");
+        }
+    }
+
+    // Mobile menu logic
+    const navbarMenubutton = document.getElementById("navbar-menubutton");
+    const navbarMenu = document.querySelector("#navbar ul");
+
+    navbarMenubutton.addEventListener("click", function() {
+        if (navbarMenu.getAttribute("aria-expanded") === "true") {
+            navbarMenu.setAttribute("aria-expanded", "false");
+        } else {
+            navbarMenu.setAttribute("aria-expanded", "true");
+        }
+    });
+
+    navbar.addEventListener("focusout", function() {
+        setTimeout(() => {
+            console.log(document.activeElement);
+            if (!navbar.contains(document.activeElement)) {
+                navbarMenu.setAttribute("aria-expanded", "false");
+            }
+        }, 0)
+    });
+</script>
+
+        <main><style type="text/css" media="screen">
+    .container {
+        margin: 1rem auto;
+        text-align: center;
+        height: 90vh;
+    }
+    h1 {
+        margin: 1rem;
+        font-size: 4rem;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+</style>
+
+<div class="container">
+    <h1>404</h1>
+
+    <p><strong>Page not found</strong></p>
+    <p>The requested page could not be found.</p>
+</div>
+</main>
+        <footer class="main">
+    <p>© LisaPlommon.se • Doktor Lindhs gata 1 • SE-413 25 Göteborg • nina@romanus.se • 2025</p>
+</footer>
+
+    </body>
+    <script> 
+        window.addEventListener('beforeunload', function () {
+            document.body.querySelector('main').classList.add('unloading');
+        });
+    </script>
+</html>
