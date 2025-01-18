@@ -17,8 +17,8 @@ mer.
 
 %}
 
-- [Arkiv](/about/arkiv)
-- [Pressklipp och länkar](/about/press)
+- [Arkiv]({{ site.baseurl }}/about/archive)
+- [Pressklipp och länkar]({{ site.baseurl }}/about/press)
 
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Dui purus sed integer consectetur condimentum montes euismod. Laoreet orci mauris mattis montes vestibulum himenaeos ultricies pellentesque lobortis. Sagittis magna hac litora, ligula lorem consectetur. Diam efficitur suscipit aptent dis mattis. Gravida velit ante metus eu dui. Duis hendrerit consequat etiam curabitur tellus sapien sed habitasse.

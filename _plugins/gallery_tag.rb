@@ -23,7 +23,7 @@ module Jekyll
                     output += "<img src=\"#{ site.baseurl }#{image[:path]}\" alt=\"#{image[:alt]}\">"
                 else
                     # Todo: Switch betwen local links and external links and add baseurl if local
-                    output += "<a href=\"#{image[:url]}\"><img src=\"#{ site.baseurl }#{image[:path]}\" alt=\"#{image[:alt]}\"><span>#{image[:alt]}</span></a>"
+                    output += "<a href=\"#{ site.baseurl }#{image[:url]}\"><img src=\"#{ site.baseurl }#{image[:path]}\" alt=\"#{image[:alt]}\"><span>#{image[:alt]}</span></a>"
                 end
             end
             output += '</div>'
