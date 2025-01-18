@@ -4,7 +4,22 @@ title: Om
 description: Om Lisa Plommon
 ---
 
-# Om Lisa Plommon
+# Nina Romanus alias Lisa Plommon
+
+{% preamble 
+
+Att mitt digitala alias fick namnet Lisa Plommon började som en
+felläsning och ett skämt men namnet var så bra att det fick vara kvar. Det är också
+
+rätt bekvämt att ha flera namn att tillgå för olika situationer. Till det plötsligt blir lite
+förvirrande när den digitala sfären och den verkliga världen flätas samman allt
+mer.
+
+%}
+
+- [Arkiv](/about/arkiv)
+- [Pressklipp och länkar](/about/press)
+
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Dui purus sed integer consectetur condimentum montes euismod. Laoreet orci mauris mattis montes vestibulum himenaeos ultricies pellentesque lobortis. Sagittis magna hac litora, ligula lorem consectetur. Diam efficitur suscipit aptent dis mattis. Gravida velit ante metus eu dui. Duis hendrerit consequat etiam curabitur tellus sapien sed habitasse.
 
