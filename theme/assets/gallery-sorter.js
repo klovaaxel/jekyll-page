@@ -72,20 +72,22 @@ function sortGallery(gallery, images) {
 
     let activeColumn = 0;
 
+    const averageImageCount = images.length / columnCount;
+
     // Loop through the images and add them to the correct column
     for (let image of images) {
         const imageHeight = parseInt(window.getComputedStyle(image).height.slice(0, -2));
 
         // If the column is "full", go to the next column or start over (only if the column is not empty)
-        if (columnHeights[activeColumn] + imageHeight > averageHeight && columnHeights != 0) {
-            activeColumn = (activeColumn + 1) % columnCount;
+        if (columnHeights[activeColumn] + imageHeight > averageHeight + (averageImageCount * 30) && columnHeights != 0) {
+            activeColumn = activeColumn + 1 < columnCount ? activeColumn + 1 : 0;
         }
 
         // Add the image to the column
         column3dArray[activeColumn].push(image);
         columnHeights[activeColumn] += imageHeight;
         // Go to next column or start over
-        activeColumn = (activeColumn + 1) % columnCount;
+        activeColumn = activeColumn + 1 < columnCount ? activeColumn + 1 : 0;
     }
 
     // concat all columns into one array

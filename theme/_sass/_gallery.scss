@@ -10,13 +10,24 @@
     }
 
     & > * {
-        padding-bottom: 1rem;
+        margin-bottom: 1rem;
         box-sizing: border-box;
     }
 
     & > a {
         display: inline-block;
         width: 100%;
+        position: relative;
+
+        & > span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            color: var(--background-color);
+            background-color: var(--text-color);
+            font-weight: bold;
+        }
     }
 
     img {
@@ -34,10 +45,6 @@
     }
 
     @media screen and (min-width: 1024px) {
-        columns: 3;
-    }
-
-    @media screen and (min-width: 2048px) {
-        columns: 4;
+        columns: 2;
     }
 }

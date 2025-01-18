@@ -46,6 +46,10 @@ body:not(.index) main {
     max-width: min(75ch, 90vw);
 }
 
+body.index {
+    text-align: center;
+}
+
 .preamble {
     font-size: 1.2em;
 }
