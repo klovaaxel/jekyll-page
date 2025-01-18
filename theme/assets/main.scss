@@ -49,6 +49,10 @@ body:not(.index) main {
 
 body.index {
     text-align: center;
+
+    .gallery {
+        margin-inline: min(5vw, 10rem);
+    }
 }
 
 .preamble {

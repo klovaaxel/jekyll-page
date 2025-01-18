@@ -79,7 +79,7 @@ function sortGallery(gallery, images) {
         const imageHeight = parseInt(window.getComputedStyle(image).height.slice(0, -2));
 
         // If the column is "full", go to the next column or start over (only if the column is not empty)
-        if (columnHeights[activeColumn] + imageHeight > averageHeight + (averageImageCount * 30) && columnHeights != 0) {
+        if (columnHeights[activeColumn] + imageHeight > averageHeight + (averageImageCount * convertRemToPixels(5)) && columnHeights != 0) {
             activeColumn = activeColumn + 1 < columnCount ? activeColumn + 1 : 0;
         }
 
@@ -106,4 +106,8 @@ function sortGallery(gallery, images) {
 
     // Remove the loading class from the gallery
     gallery.classList.remove("gallery-loading");
+}
+
+function convertRemToPixels(rem) {    
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
