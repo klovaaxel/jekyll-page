@@ -4,21 +4,63 @@ nav.main {
     
     font-size: 1.2rem;
     display: flex;
-    gap: 2rem;
     align-items: center;
-    padding: var(--padding) 5rem var(--padding) var(--padding);
     text-transform: capitalize;
+    padding: var(--padding);
 
     position: sticky;
     top: 0;
 
-    a:first-child {
+    button {
+        background: none;
+        border: none;
+        font-size: 1em;
+    }
+
+    ul {
+        list-style: none;
+        display: none;
+       
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        background: var(--background-color);
+        top: 3rem;
+        right: 0;
+        padding: 2rem;
+        margin: 0;
+        gap: 1rem;
+
+        &[aria-expanded="true"] {
+            display: flex;
+        }
+    }
+
+    & > a {
         margin-right: auto;
         font-size: 2rem;
     }
 
     a {
         text-decoration: none;
-        color: #000;
+        color: var(--text-color);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav.main {
+        padding: var(--padding) 5rem var(--padding) var(--padding);
+        
+        ul {
+            display: flex;
+            flex-direction: row;
+            position: static;
+            gap: 2rem;
+            padding: 0;
+        }
+
+        .navbar-menubutton {
+            display: none;
+        }
     }
 }

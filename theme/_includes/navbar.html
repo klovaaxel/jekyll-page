@@ -1,18 +1,56 @@
-<nav id="navbar" class="main">
+
+
+<nav id="navbar" class="main" >
     <a href="{{ site.baseurl }}/">Lisa Plommon</a>
-    <a href="{{ site.baseurl }}/projects">Galleri/projekt</a>
-    <a href="{{ site.baseurl }}/about">Om</a>
-    <a href="{{ site.baseurl }}/contact">Kontakt</a>
+
+    <button id="navbar-menubutton" class="navbar-menubutton" type="button" aria-haspopup="true" aria-controls="navbar" aria-expanded="false">
+        Meny
+    </button>
+    <ul role="menu" aria-labelledby="navbar-menubutton">
+        <li role="none">
+            <a role="menuitem" href="{{ site.baseurl }}/projects">Galleri/projekt</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" href="{{ site.baseurl }}/about">Om</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" href="{{ site.baseurl }}/contact">Kontakt</a>
+        </li>
+    </ul>
 </nav>
 
 <script>
     const navbar = document.getElementById("navbar");
-    const links = navbar.getElementsByTagName("a");
-    const currentUrl = window.location.href;
+    const links = navbar.querySelectorAll("ul a");
+    const currentUrl = window.location.pathname;
 
+    // Set active class on current page
     for (let i = 0; i < links.length; i++) {
-        if (links[i].href === currentUrl) {
-            links[i].className = "active";
+        if (currentUrl.includes(links[i].getAttribute("href"))) {
+            links[i].setAttribute("aria-current", "page");
+        } else {
+            links[i].removeAttribute("aria-current");
         }
     }
+
+    // Mobile menu logic
+    const navbarMenubutton = document.getElementById("navbar-menubutton");
+    const navbarMenu = document.querySelector("#navbar ul");
+
+    navbarMenubutton.addEventListener("click", function() {
+        if (navbarMenu.getAttribute("aria-expanded") === "true") {
+            navbarMenu.setAttribute("aria-expanded", "false");
+        } else {
+            navbarMenu.setAttribute("aria-expanded", "true");
+        }
+    });
+
+    navbar.addEventListener("focusout", function() {
+        setTimeout(() => {
+            console.log(document.activeElement);
+            if (!navbar.contains(document.activeElement)) {
+                navbarMenu.setAttribute("aria-expanded", "false");
+            }
+        }, 0)
+    });
 </script>
