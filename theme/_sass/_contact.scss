@@ -2,7 +2,7 @@ form.contact {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 60ch;
+    width: min(90vw, 60ch);
 
     & > div {
         display: flex;

@@ -8,6 +8,8 @@ nav.main {
     text-transform: capitalize;
     padding: var(--padding);
 
+    box-shadow: 0rem 0rem 3rem -1rem rgba(0, 0, 0, 0.2);
+
     position: sticky;
     top: 0;
     z-index: 100;
@@ -20,21 +22,26 @@ nav.main {
 
     ul {
         list-style: none;
-        display: none;
-       
+        display: flex;
+        visibility: hidden;
+        
         align-items: center;
         flex-direction: column;
         position: fixed;
+        z-index: 99;
         background: var(--background-color);
-        top: 3rem;
+        top: 4.3rem;
         right: 0;
         padding: 2rem;
         margin: 0;
         gap: 1rem;
 
+        box-shadow: -1rem 1rem 3rem -1.5rem rgba(0, 0, 0, 0.2);
+
         &[aria-expanded="true"] {
-            display: flex;
+            visibility: visible;
         }
+
     }
 
     & > a {
@@ -53,7 +60,7 @@ nav.main {
         padding: var(--padding) 5rem var(--padding) var(--padding);
         
         ul {
-            display: flex;
+            visibility: visible;
             flex-direction: row;
             position: static;
             gap: 2rem;
