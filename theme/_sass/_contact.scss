@@ -18,7 +18,7 @@ form.contact {
         min-height: 1.5rem;
         font-size: 1rem;
         padding: 1rem;
-        border-radius: 0;
+        border-radius: var(--border-radius);
     }
 
     button {
@@ -27,5 +27,6 @@ form.contact {
         font-weight: bold;
         background: none;
         border: 3px solid var(--text-color);
+        border-radius: var(--border-radius);
     }
 }

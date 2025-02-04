@@ -5,11 +5,13 @@
 @use "../_sass/navbar.scss";
 @use "../_sass/footer.scss";
 @use "../_sass/contact.scss";
+@use "../_sass/archive.scss";
 
 :root {
     --background-color: white;
     --load-transition: 200ms ease-in-out;
     --text-color: black;
+    --border-radius: 0.25rem;
 }
 
 body {
