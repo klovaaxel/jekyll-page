@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Om Lisa Plommon">
+
+        <title>Om</title>
+
+        <link rel="stylesheet" href="/jekyll-page/assets/main.css" />
+        <script defer src="/jekyll-page/assets/gallery-sorter.js"></script>
+    </head>
+    <body class="">
+        
+
+<nav id="navbar" class="main" >
+    <a href="/jekyll-page/">Lisa Plommon</a>
+
+    <button id="navbar-menubutton" class="navbar-menubutton" type="button" aria-haspopup="true" aria-controls="navbar" aria-expanded="false">
+        Meny
+    </button>
+    <ul role="menu" aria-labelledby="navbar-menubutton">
+        <li role="none">
+            <a role="menuitem" href="/jekyll-page/projects">Galleri/projekt</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" href="/jekyll-page/about">Om</a>
+        </li>
+        <li role="none">
+            <a role="menuitem" href="/jekyll-page/contact">Kontakt</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    const navbar = document.getElementById("navbar");
+    const links = navbar.querySelectorAll("ul a");
+    const currentUrl = window.location.pathname;
+
+    // Set active class on current page
+    for (let i = 0; i < links.length; i++) {
+        if (currentUrl.includes(links[i].getAttribute("href"))) {
+            links[i].setAttribute("aria-current", "page");
+        } else {
+            links[i].removeAttribute("aria-current");
+        }
+    }
+
+    // Mobile menu logic
+    const navbarMenubutton = document.getElementById("navbar-menubutton");
+    const navbarMenu = document.querySelector("#navbar ul");
+
+    navbarMenubutton.addEventListener("click", function() {
+        if (navbarMenu.getAttribute("aria-expanded") === "true") {
+            navbarMenu.setAttribute("aria-expanded", "false");
+        } else {
+            navbarMenu.setAttribute("aria-expanded", "true");
+        }
+    });
+
+    navbar.addEventListener("focusout", function() {
+        setTimeout(() => {
+            console.log(document.activeElement);
+            if (!navbar.contains(document.activeElement)) {
+                navbarMenu.setAttribute("aria-expanded", "false");
+            }
+        }, 0)
+    });
+</script>
+
+        <main><h1 id="nina-romanus-alias-lisa-plommon">Nina Romanus alias Lisa Plommon</h1>
+
+<p class="preamble">Att mitt digitala alias fick namnet Lisa Plommon började som en
+felläsning och ett skämt men namnet var så bra att det fick vara kvar. Det är också
+
+rätt bekvämt att ha flera namn att tillgå för olika situationer. Till det plötsligt blir lite
+förvirrande när den digitala sfären och den verkliga världen flätas samman allt
+mer.
+
+</p>
+
+<ul>
+  <li><a href="/jekyll-page/about/archive">Arkiv</a></li>
+  <li><a href="/jekyll-page/about/press">Pressklipp och länkar</a></li>
+</ul>
+
+<p>Lorem ipsum odor amet, consectetuer adipiscing elit. Dui purus sed integer consectetur condimentum montes euismod. Laoreet orci mauris mattis montes vestibulum himenaeos ultricies pellentesque lobortis. Sagittis magna hac litora, ligula lorem consectetur. Diam efficitur suscipit aptent dis mattis. Gravida velit ante metus eu dui. Duis hendrerit consequat etiam curabitur tellus sapien sed habitasse.</p>
+
+<p>Praesent sodales vestibulum ultricies mauris feugiat massa. Proin interdum congue pharetra curae eget ultricies. Pulvinar aenean mattis pulvinar ac sodales mattis. Netus senectus ac sociosqu purus vivamus tellus. Tristique faucibus sagittis tortor auctor lectus rhoncus, dui pulvinar consectetur. Faucibus vestibulum ac vestibulum montes facilisis gravida.</p>
+
+</main>
+        <footer class="main">
+    <p>© LisaPlommon.se • Doktor Lindhs gata 1 • SE-413 25 Göteborg • nina@romanus.se • 2025</p>
+</footer>
+
+    </body>
+    <script> 
+        window.addEventListener('beforeunload', function () {
+            document.body.querySelector('main').classList.add('unloading');
+        });
+    </script>
+</html>
